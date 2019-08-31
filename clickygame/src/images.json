@@ -1,0 +1,22 @@
+[
+    {
+      "name":"Barack Obama",
+      "id":0,
+      "picture": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiWiKKA_q3kAhVGR60KHcvpDa4QjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Ftime.com%252F5082975%252Fbarack-obama-2017-book-music-list%252F%26psig%3DAOvVaw08i8wy7xXaIpy7Obg--CKa%26ust%3D1567370960682246&psig=AOvVaw08i8wy7xXaIpy7Obg--CKa&ust=1567370960682246"
+    },
+    {
+      "name":"Malachite",
+      "id":1,
+      "picture": "https://www.pngarts.com/files/2/Malachite-PNG-Image.png"
+    },
+    {
+      "name":"Lapis Lazuli",
+      "id":2,
+      "picture": "https://www.pngarts.com/files/2/Lapis-Lazuli-Free-PNG-Image.png"
+    },
+    {
+      "name":"Quartz",
+      "id":3,
+      "picture": "https://i.pinimg.com/originals/7a/1e/8c/7a1e8cbae81363b96096b4c5d0971705.png"
+    }
+  ]
