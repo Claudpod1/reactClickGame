@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
+import Wrapper from './components/Wrapper';
 
-import logo from './logo.svg';
 import './App.css';
-import images from './images';
+import images from './images.json';
 import Scores from './components/Scores';
 import Jumbotron from './components/Jumbotron'
+import Images from './components/Images'
 
 class App extends Component  {
   state = {
+    images,
     currentScore: 0,
     targetScore: 0,
     clickedValues:[],
-    images
+
   }
   render(){
     return (
       <div className="App">
-        <Jumbotron />
+      <Jumbotron />
+      <Wrapper />
        <Scores score = {this.state.currentScore} 
        topScore = {this.state.targetScore} />
        <Images 
