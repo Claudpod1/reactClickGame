@@ -18,6 +18,8 @@ class App extends Component  {
   render(){
     return (
       <div className="App">
+      <Scores score = {this.state.currentScore} 
+      topScore = {this.state.targetScore} />
       <Jumbotron />
         <Wrapper>
         {this.state.images.map(images => (
@@ -27,7 +29,7 @@ class App extends Component  {
              name={images.name}
              id={images.id}
              key={images.id}
-             
+
             />
 
           ))}
