@@ -19,16 +19,29 @@ class App extends Component  {
     return (
       <div className="App">
       <Jumbotron />
-      <Wrapper />
-       <Scores score = {this.state.currentScore} 
+        <Wrapper>
+        {this.state.images.map(images => (
+             <Images 
+             className="images"
+             image={images.picture}
+             name={images.name}
+             id={images.id}
+             key={images.id}
+             
+            />
+
+          ))}
+        </Wrapper>
+      
+       {/* <Scores score = {this.state.currentScore} 
        topScore = {this.state.targetScore} />
        <Images 
         className="images"
         image={images.picture}
         name={images.name}
         id={images.id}
-        />
-       
+        /> */}
+   
       </div>
     );
   }
