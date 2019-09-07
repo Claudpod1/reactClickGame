@@ -6,65 +6,78 @@ import Scores from './components/Scores';
 import Jumbotron from './components/Jumbotron'
 import Images from './components/Images'
 
-class App extends Component  {
+class App extends Component {
   state = {
     images,
     currentScore: 0,
     targetScore: 0,
-    clickedValues:[],
+    clickedValues: [],
 
   }
-  
-// added shuffle function - recommeded from lindsay to google 
+
+
+  // added shuffle function - recommeded from lindsay to google 
 
   shuffle = (arr) => {
     var i,
-        j,
-        temp;
+      j,
+      temp;
     for (i = arr.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+      j = Math.floor(Math.random() * (i + 1));
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
     }
     return arr;
- };
- 
-  handleClick = (id) => {
+  };
+
+
+  // clickCount = (id) => {
+
+  handleClick = (value,id) => {
 
     // make a copy of the array of images 
     // shuffle the images of the copy of the array 
     const imagesCopy = [...this.state.images];
     const shuffleImages = this.shuffle(imagesCopy);
-    let copyClickedvalues = [...this.state.clickedValues];
+    let copyClickedValues = [...this.state.clickedValues];
+    console.log(copyClickedValues);
 
     // if the copy of the array includes the id for the images.json the game will end 
-    if(copyClickedvalues,includes(id)){
-    this.gameChanger();
+    if (copyClickedValues.includes(id)) {
+      console.log("you clicked on this message")
+      this.gameChanger();
 
-    // else push the id to set to the state of the score/cuurentScore 
-    // make another copy of the values that were clicked
-    // then have the images shuffle 
-  }else{
-    copyClickedvalues.push(id);
-    this.setState({
-      score:this.state.currentScore +1,
-      clickedValues: copyClickedvalues,
-      images: shuffleImages
+      // else push the id to set to the state of the score/cuurentScore 
+      // make another copy of the values that were clicked
+      // then have the images shuffle 
+    } else {
+      copyClickedValues.push(id);
+      this.setState({
+        currentScore: this.state.currentScore + 1,
+        clickedValues: copyClickedValues,
+        images: shuffleImages
 
-    });
+      });
+    }
   }
 
   gameChanger = () => {
     const imagesCopy = [...this.state.images];
     const shuffleImages = this.shuffle(imagesCopy);
-    if(this.state.currentScore > this.state.targetScore){
-      this.setState({ Score: this.state.currentScore})
+
+    
+    console.log(this.state.currentScore + "score")
+    console.log(this.state.targetScore + "targetscore");
+    // if the currentscore is less than the targetscore 
+    // set the score to currentScore / the number of times the image was clicked 
+    if (this.state.currentScore > this.state.targetScore) {
+      this.setState({ Score: this.state.currentScore })
 
     }
 
     this.state.images.forEach(image => {
-      image.count =0 ;
+      image.count = 0;
 
     });
 
@@ -73,31 +86,30 @@ class App extends Component  {
       images: shuffleImages
     });
   }
-  
-
 
   render() {
     return (
       <div className="App">
-      <Scores score = {this.state.currentScore} 
-      topScore = {this.state.targetScore} />
-      <Jumbotron />
+        <Scores score={this.state.currentScore}
+          topScore={this.state.targetScore} />
+        <Jumbotron />
         <Wrapper>
-        {this.state.images.map(images => (
-             <Images 
-             className="images"
-             image={images.picture}
-             name={images.name}
-             id={images.id}
-             key={images.id}
+          {this.state.images.map(images => (
+            <Images
+              className="images"
+              image={images.picture}
+              name={images.name}
+              id={images.id}
+              key={images.id}
 
             />
 
           ))}
         </Wrapper>
-   
+
       </div>
     );
   }
+}
 
 export default App;
