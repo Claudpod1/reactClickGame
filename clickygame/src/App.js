@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Wrapper from './components/Wrapper';
-
 import './App.css';
 import images from './images.json';
 import Scores from './components/Scores';
@@ -15,7 +14,69 @@ class App extends Component  {
     clickedValues:[],
 
   }
-  render(){
+  
+// added shuffle function - recommeded from lindsay to google 
+
+  shuffle = (arr) => {
+    var i,
+        j,
+        temp;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;
+ };
+ 
+  handleClick = (id) => {
+
+    // make a copy of the array of images 
+    // shuffle the images of the copy of the array 
+    const imagesCopy = [...this.state.images];
+    const shuffleImages = this.shuffle(imagesCopy);
+    let copyClickedvalues = [...this.state.clickedValues];
+
+    // if the copy of the array includes the id for the images.json the game will end 
+    if(copyClickedvalues,includes(id)){
+    this.gameChanger();
+
+    // else push the id to set to the state of the score/cuurentScore 
+    // make another copy of the values that were clicked
+    // then have the images shuffle 
+  }else{
+    copyClickedvalues.push(id);
+    this.setState({
+      score:this.state.currentScore +1,
+      clickedValues: copyClickedvalues,
+      images: shuffleImages
+
+    });
+  }
+
+  gameChanger = () => {
+    const imagesCopy = [...this.state.images];
+    const shuffleImages = this.shuffle(imagesCopy);
+    if(this.state.currentScore > this.state.targetScore){
+      this.setState({ Score: this.state.currentScore})
+
+    }
+
+    this.state.images.forEach(image => {
+      image.count =0 ;
+
+    });
+
+    this.setState({
+      score: 0,
+      images: shuffleImages
+    });
+  }
+  
+
+
+  render() {
     return (
       <div className="App">
       <Scores score = {this.state.currentScore} 
@@ -34,19 +95,9 @@ class App extends Component  {
 
           ))}
         </Wrapper>
-      
-       {/* <Scores score = {this.state.currentScore} 
-       topScore = {this.state.targetScore} />
-       <Images 
-        className="images"
-        image={images.picture}
-        name={images.name}
-        id={images.id}
-        /> */}
    
       </div>
     );
   }
-}
 
 export default App;
