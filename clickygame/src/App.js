@@ -3,7 +3,7 @@ import Wrapper from './components/Wrapper';
 import './App.css';
 import images from './images.json';
 import Scores from './components/Scores';
-import Jumbotron from './components/Jumbotron'
+import Jumbotron from './components/Jumbotron';
 import Images from './components/Images'
 
 class App extends Component {
@@ -34,7 +34,7 @@ class App extends Component {
 
   // clickCount = (id) => {
 
-  handleClick = (value,id) => {
+  handleClick = (id) => {
 
     // make a copy of the array of images 
     // shuffle the images of the copy of the array 
@@ -45,7 +45,8 @@ class App extends Component {
 
     // if the copy of the array includes the id for the images.json the game will end 
     if (copyClickedValues.includes(id)) {
-      console.log("you clicked on this message")
+      // if(this.state.clickedValues.includes(id)){
+      console.log("you clicked on this ima")
       this.gameChanger();
 
       // else push the id to set to the state of the score/cuurentScore 
@@ -72,7 +73,7 @@ class App extends Component {
     // if the currentscore is less than the targetscore 
     // set the score to currentScore / the number of times the image was clicked 
     if (this.state.currentScore > this.state.targetScore) {
-      this.setState({ Score: this.state.currentScore })
+      this.setState({ targetScore: this.state.currentScore })
 
     }
 
@@ -82,7 +83,7 @@ class App extends Component {
     });
 
     this.setState({
-      score: 0,
+      currentScore: 0,
       images: shuffleImages
     });
   }
@@ -101,6 +102,7 @@ class App extends Component {
               name={images.name}
               id={images.id}
               key={images.id}
+              handleClick= {this.handleClick}
 
             />
 

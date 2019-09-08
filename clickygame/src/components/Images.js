@@ -7,7 +7,7 @@ function Images(props) {
                 src={props.image}
                 alt={props.name}
                 value={props.value}
-                // onClick={() => props.score(props.id)}
+                onClick={() => props.handleClick(props.id)}
             />
         </div>
     )

@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,15 +9,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.h1 {
+  font-display: bold;
+  font-size: 100%;
+}
+
+.scoreCounter {
+  text-align: right
+
+}
+
 
 .jumbotron {
-  background-color: lightgray;
-  background-repeat: repeat;
-  color: #fff;
+  background-repeat: none;
   min-height: 400px;
   padding: 180px 20px;
   padding-bottom: 140px;
-  text-align: center;
+  text-align: right;
+  background-image: url(images/flag.jpg);
+  color: #0D1821;
+ 
 }
 
 .wrapper {
