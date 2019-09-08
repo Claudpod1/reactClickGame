@@ -1,5 +1,15 @@
+<b> Homework: Build a react click game </b>
+
+#reactClickGame
+<b> Homework assignment covering 
+
+[screencapture-localhost-3000-2019-09-07-21_15_36.pdf](https://github.com/Claudpod1/reactClickGame/files/3587257/screencapture-localhost-3000-2019-09-07-21_15_36.pdf)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<b> About </b>
+
+<b> Requirements </b>
 ## Available Scripts
 
 In the project directory, you can run:
