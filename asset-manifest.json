@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/reactClickGame/static/css/main.965a2c45.chunk.css",
+    "main.js": "/reactClickGame/static/js/main.07f49dce.chunk.js",
+    "main.js.map": "/reactClickGame/static/js/main.07f49dce.chunk.js.map",
+    "runtime~main.js": "/reactClickGame/static/js/runtime~main.49359f35.js",
+    "runtime~main.js.map": "/reactClickGame/static/js/runtime~main.49359f35.js.map",
+    "static/js/2.c6be5ced.chunk.js": "/reactClickGame/static/js/2.c6be5ced.chunk.js",
+    "static/js/2.c6be5ced.chunk.js.map": "/reactClickGame/static/js/2.c6be5ced.chunk.js.map",
+    "index.html": "/reactClickGame/index.html",
+    "precache-manifest.7271c09702b5bc3f7005aa20eb6c3c43.js": "/reactClickGame/precache-manifest.7271c09702b5bc3f7005aa20eb6c3c43.js",
+    "service-worker.js": "/reactClickGame/service-worker.js",
+    "static/css/main.965a2c45.chunk.css.map": "/reactClickGame/static/css/main.965a2c45.chunk.css.map",
+    "static/media/index.css": "/reactClickGame/static/media/flag.cfb9999f.jpg"
+  }
+}
