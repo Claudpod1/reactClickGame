@@ -20,9 +20,7 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "use_env_variable","JAWS_DB_URL",
-      "dialect","mysql"
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
